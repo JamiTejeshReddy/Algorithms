@@ -1,0 +1,12 @@
+Find the maxSUm in the subarray
+public int maxSubArray(int[] nums) {
+        int maxSum = nums[0];
+        int cumSum = nums[0];
+        
+        for (int i = 1; i < nums.length; i++) {
+            cumSum = Math.max(nums[i], cumSum + nums[i]);
+            maxSum = Math.max(maxSum, cumSum);
+        }
+        
+        return maxSum;
+    }
